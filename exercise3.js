@@ -10,7 +10,14 @@
 //your code...
 
 
+var str="";
 
+if(str==="" && str.length==0)
+{
+    console.log("true");
+}
+else
+console.log("false");
 
 
 /************************************************************* */
@@ -22,7 +29,9 @@
 
 //your code...
 
-
+var str="Learning JavaScript is fun!";
+var repStr=str.replace("fun!", "cool!");
+console.log(repStr);
 
 
 /************************************************************* */
@@ -33,7 +42,13 @@
 
 //your code...
 
+var numbers1 = [1, 2, 3, 4, 5];
+var numbers2 = numbers1.map(myFunction(value));
 
+function myFunction(value) {
+  return value * value;
+}
+console.log(numbers2);
 
 
 
@@ -45,7 +60,20 @@
 
 
 //your code...
+var numbers=[1, 3, 5, 7, 9, 1, 3, 5];
+var numbers2=numbers.filter(myFunction);
+//var numbers2=numbers.every(myFunction);
 
+function myFunction(value)
+{
+    
+
+    return value>3;
+    
+        
+    
+}
+console.log(numbers2);
 
 
 
@@ -58,6 +86,13 @@
 
 
 //your code...
+var numbers1 = [23, 24, 19, 16, 22];
+var sum = numbers1.reduce(myFunction);
+
+function myFunction(total, value) {
+  return total + value;
+}
+console.log("The sum of numbers in an array is :"+sum);
 
 
 
@@ -73,6 +108,33 @@
 
 
 //your code...
+var str="G C T A";
+ var str1=str.split(" ");
+console.log(str1);
+
+for(var i=0;i<str1.length;i++)
+{
+    if((i+1)%2==0)
+    {
+       var temp1=str1[i];
+     
+    }
+    else
+        {
+     var temp2=str1[i];
+     
+        }
+        if(temp1!=null)
+        {
+            console.log(temp1); 
+            console.log(temp2); 
+            temp1=null;
+            temp2=null;
+        }
+
+   
+}
+
 
 
 
@@ -119,17 +181,42 @@ console.log(mapObj.has({company : "TEKsystems"}));
 
 let ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
 //reverse the array, without modifying the ones array.
-
+console.log( ones.length);
+   for(var i=ones.length;i>=0;i--)
+   {
+       console.log(ones[i]);
+   }
 
 /************************************************************* */
 //Problem 12:
 //create a function called performer(cb) that takes in a callback function and runs that callback function.  It should return the output of the callback function.
 
-function performer(cb) {
-    //code goes here
+let add=function(a,b)
+{
+    return a+b;
 }
+let sub=function(a,b){
+    return a-b;
+}
+let calc=function performer(num1,num2,cb) {
+
+    return cb(num1,num2);
+
+
+}
+console.log(calc(2,4,add));
+
+
 
 
 /************************************************************* */
 //Bonus assignment:
 //research a new feature of ES6+ and create an example of it's use case here.  Be sure to write comments explaining what the feature is and why it is useful.
+class Car {
+    constructor(brand) {
+      this.carname = brand;
+    }
+  }
+  mycar = new Car("Ford");
+
+  //in the above example, constructor is used and this keyword used to represent the class vaeriable.Created object of the class Car.
