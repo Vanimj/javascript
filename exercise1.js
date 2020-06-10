@@ -7,7 +7,20 @@
 
 //your code...
 
+function celsiusToFaren(temp)
+{
+    var farenTemp=((temp)*1.8)+32;
+    return farenTemp;
+}
 
+function farenToCelsius(temp)
+{
+    var celsiusTemp=((5*temp)-160)/9;
+    return celsiusTemp;
+}
+
+console.log("Celsius to Fareheit  :" +celsiusToFaren(50));
+console.log("Fareheit to Celsius  :" +farenToCelsius(45));
 
 
 
@@ -18,7 +31,21 @@
 
 //your code...
 
+function ageValidation(age)
+{
+    if((age>=18)&&(age<=100))
+    {
+    
+    return("eligible to vote");
+          
+    }
+    else if((age<0)||((age>=0)&&(age<18)))
+    {
+        return("ineligible to vote");
+    }
 
+}
+console.log(ageValidation(18));
 
 
 
@@ -32,6 +59,15 @@
 
 
 
+var str="The five boxing wizards jump quickly";
+var str1=str.split(" ");
+console.log(str1);
+for(var i=0;i<6;i++)
+{
+    console.log(str1[i]);
+}
+var str2=(str1.join(" "));
+console.log(str2);
 
 
 
@@ -44,7 +80,14 @@
 
 
 
-
+var telNum, revNum;
+var revTelNum=function(telNum)
+{
+    var str=telNum.toString();
+    var revNum = str.split("").reverse().join("");
+    return revNum;
+}
+console.log("The reverse telephone number :  "+revTelNum(2245327320));
 
 /************************************************************* */
 // Problem 5:
@@ -53,7 +96,17 @@
 //your code...
 
 
-
+var car={
+    make:'Nissan',
+    model:'Rogue',
+    year:2019,
+    color:'Blue',
+    disp :function()
+    {
+        return this.year +" "+this.color+" "+this.make+" "+this.model;
+    }
+};
+console.log("Information about the car"  +car.disp());
 
 
 
@@ -64,7 +117,15 @@
 
 //your code...
 
-
+for(var i=0;i<=15;i++)
+{
+    if(i%2==0)
+    {
+        console.log("Even number"+i);
+    }
+    else
+    console.log("odd"+i);
+}
 
 
 /************************************************************* */
@@ -72,7 +133,24 @@
 // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
 //your code...
+ 
 
+for(var i=1;i<=100;i++)
+{
+    if((i%3==0)&&(i%5==0))
+    {
+        console.log("TEKCAMP")
+    }
+    else
+    if(i%3==0)
+    {
+        console.log("TEK");
+    }
+    else if(i%5==0)
+    {
+        console.log("CAMP");
+    }
+}
 
 /************************************************************* */
 // Problem 8:
@@ -82,6 +160,13 @@ const nums = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 // and 9: the zeroth, third, sixth, and ninth values.
 
 //your code...
+
+const nums=[0,1,2,3,4,5,6,7,8,9,10];
+
+for(var i=0;i<10;i+=3)
+{
+    console.log(nums[i]);
+}
 
 
 
@@ -93,6 +178,24 @@ const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','ama
 // Using both the foodArray and the adjectiveArray, make a
 // "for" loop that console.log()'s a sentence for each
 // corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  "Potatoes are salty", "Lemon is sour".
+
+var len=foodArray.length;
+console.log(len);
+var school=foodArray[len-1];
+console.log(school);
+for(var i=0;i<foodArray.length-1;i++)
+{
+    
+    var endChar=foodArray[i].charAt((foodArray[i].length-1));
+
+    if(endChar=='s')
+    {
+        console.log(foodArray[i] +" "+"are"+" "+adjectiveArray[i]);
+    }
+    else
+    console.log(foodArray[i] +" "+"is"+" "+adjectiveArray[i]);
+}
+
 
 /************************************************************* */
 // Bonus Assignment: Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly does one of the 4 operations whenever it is run.  the doMath() function should print out what mathetmatical function was carried out.  The doMath() function should return the computed value of any operation performed.

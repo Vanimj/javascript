@@ -10,7 +10,14 @@ for(let i=0; i<10; i++) {
 
 
 //your code...
+var i=1;
+console.log("The value of i in the loop is :");
+while(i<=10)
+{
+    console.log(i);
+    i++;
 
+}
 
 
 
@@ -20,7 +27,23 @@ for(let i=0; i<10; i++) {
 //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
 //your code...
+function sum(x,y)
+{
+ return x+y;
 
+}
+function mul(z)
+{
+    var sum1=sum(30,2);
+    var multres=sum1*z;
+    return (multres);
+}
+var res=mul(20)/exp(10);
+console.log("The final result of this expression is" +" "+res);
+function exp(a)
+{
+    return a*a;
+}
 
 /************************************************************* */
 //Problem 3:
@@ -38,8 +61,110 @@ for(let i=0; i<10; i++) {
 // 125
 // undefined
 // ""
+/********************************************************************* */
+20;
+if(20)
+{
+    console.log("true");
+    console.log("it returns true, ")
 
+    }
+    else
+    console.log("false");
+    0;
+    if(0)
+    {
+        console.log("true");
+            }
+            else
+            console.log("false");
+            console.log("in javascript, 0 is considered as falsy value when evaluated in if-else statement");
+            "zero";
+            if("zero")
+            {
+                console.log("true");
+                console.log("string value is truthy as it is not empty");
+            }
+            else
+            console.log("false");
+            const zero=20;
+            if(zero)
+            {
+                console.log("true");
+                console.log("constants cannot be typed to boolean");
+            }
+            else
+            console.log("false");
+    null;
+    if(null)
+{
+    console.log("true");
 
+}
+else
+console.log("false");
+console.log("null is a falsy value in javascript ");
+"0";
+if("0")
+{
+    console.log("true");
+    console.log("string is truthy")
+    }
+    else
+    console.log("false");
+    !"";
+    if(!"")
+    {
+        console.log("true");
+        console.log("it is truthy, as it is not in the falsy list");
+    }
+    else
+    console.log("false");
+    {};
+    if({})
+    {
+        console.log("true");
+    }
+    else
+    console.log("false");
+    125;
+    if(125)
+    {console.log("true");
+    console.log("it  is a number");
+}
+else
+console.log("false");
+undefined;
+if(undefined)
+{
+    console.log("true");
+    }
+    else
+    console.log("false");
+    console.log("undefined is falsy in javascript");
+    "";
+    if("")
+    {
+        console.log("true");
+    }
+    else
+    console.log("false");
+    console.log("empty string is a falsy in javascript");
+    () => {console.log("hello TEKcamp!")}
+    if(() => {console.log("hello TEKcamp!")})
+    {
+        console.log("true");
+        console.log("arrow function returns something when evaluated, is truthy in javascript");
+    }
+    else
+    console.log("false");
+    console.log(`() => {console.log("hello TEKcamp!"); is ${!!(() => {console.log("hello TEKcamp!");})} because functions are truthy`)
+    if(console.log(`() => {console.log("hello TEKcamp!"); is ${!!(() => {console.log("hello TEKcamp!");})} because functions are truthy`))
+    {
+        console.log("true");
+    }
+    else
+    console.log("false");
 
 
 /************************************************************* */
@@ -61,7 +186,30 @@ if(day === "monday") {
 } else {
     console.log("It's a weekend!")
 }
+/*********************************************************************** */
+const  day = "tuesday";
 
+switch(day)
+ {
+  case "monday":
+
+    console.log("we got a long week ahead of us...");
+    break;
+case "tuesday":
+   console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+   break;
+case "wednesday" :
+    console.log("We are smack dab in the middle of the week");
+    break;
+case "thursday":
+    console.log("Thursday night... the mood is right");
+    break;
+case "Friday":
+    console.log("TGIF.  Friday truly is the best day of the week!");
+    break;
+default:
+    console.log("It's a weekend!")
+}
 
 
 /************************************************************* */
@@ -78,6 +226,14 @@ if (age > 13 && age < 19) console.log('teen'); else {
 if (age > 65) console.log("retired"); else {
     console.log("still working...");
 }
+/****************************************************************** */
+const age = 10;
+  age > 21 ? console.log("adult"): console.log("minor");
+
+  (age > 13 && age < 19) ? console.log('teen'):console.log("not a teenager");
+
+   age > 65 ? console.log("retired") : console.log("still working...");
+
 
 
 /************************************************************* */
@@ -96,6 +252,23 @@ if (age > 65) console.log("retired"); else {
 */
 
 //your code...
+var Vani={
+    name:'Vani',
+    age:38,
+    gender:'F',
+    hobbies:['Reading','Cooking'],
+    profession:'Automation Tester',
+    education:'Master of Computer Applications',
+    learn:function(){
+        console.log(this.name);
+    } ,
+    fullname:function()
+    {
+       console.log(this.name.concat('Muppuru'));
+    }
+}
+Vani.learn();
+Vani.fullname();
 
 
 /************************************************************* */
@@ -104,13 +277,50 @@ if (age > 65) console.log("retired"); else {
 //your code...
 
 
+// Problem 6: Create an object literal that represents any object in the real world that you like.  Try to come up with a realistic set of properties and methods that would accurately describe that object.  In at least one of your methods, use the this keyword to refer back to one of the properties you defined on this object literal.  
+
+var ball={
+    name:"Football",
+    color:"Red",
+    shape:"round",
+    size:"medium",
+    
+    throw:function(){
+        console.log("you can throw "+" "+this.name+" "+"easily as it is"+" "+this.shape);
+    },
+    kick:function(){
+        console.log(this.name+" "+"goes faster when kicked");
+    }
+    
+    
+}
+ball.throw();
+ball.kick();
+
 
 /************************************************************* */
 //Problem 7: create a function that outputs your 3 favorite data types, with a message explaining why you like that data type.
 
 //your code...
 
+console.log(favDatatypes(Boolean));
 
+
+
+function favDatatypes(type)
+{
+    switch(type)
+    {
+        case String:  console.log("I like String datatype, as it is immutable");
+        break;
+        case Boolean: console.log("I like Boolean, as it returns true or false values");
+        break;
+        case Array:  console.log("I like Array, as it stores multiple values in single var");
+        break;
+        default: console.log("String, Boolean, Array");
+    }
+    
+}
 
 /************************************************************* */
 //Bonus assignments:
@@ -119,6 +329,18 @@ if (age > 65) console.log("retired"); else {
 
 //your code...
 
+function multiple(x)
+{
+    return function(y)
+    {
+        return y*x;
+    }
+     
+}
+
+   let tripleFunction = multiple(3); 
+   
+console.log("Triple number :"+" "+tripleFunction(20));
 
 // 2. Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
 
@@ -126,4 +348,14 @@ if (age > 65) console.log("retired"); else {
 
 //your code...
 
-
+function stockGain(basis)
+{
+    msg="is how much stock has increased";
+    return function(yrs)
+    {
+        var r=0.05;
+        return r*basis*yrs;
+    }
+}
+var futureValue=stockGain(3500);
+console.log(futureValue(3));
